@@ -1,0 +1,218 @@
+@import "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap";
+
+* {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+html {
+    background: linear-gradient(180deg, #141414, rgb(49, 49, 49));
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    backdrop-filter: blur(10px);
+}
+
+.header img {
+    width: 210px;
+    margin-left: -63px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 80px; 
+    position: relative; /* Importante para o posicionamento do botão back */
+}
+
+.back {
+    color: #fff;
+    font-size: 35px;
+    position: absolute; /* Isso fixa o botão back à esquerda */
+    left: 120px;
+}
+
+.back i:hover {
+    color: #FF8802;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+h2 {
+    color: #FF8802;
+    padding-bottom: 55px;
+}
+
+.user-details {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(180deg, #141414, rgb(49, 49, 49));
+    box-shadow: 0 4px 12px rgba(0.3, 0.3, 0.3, 0.7);
+    border-radius: 7px;
+    text-align: center; /* Manter centralizado */
+}
+
+form .user-details {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+.user-details .input-box {
+    position: relative;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box input {
+    width: 55vh;
+    height: 45px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0 25px 0 15px;
+    transition: 0.5s;
+    margin-bottom: 25px;
+}
+
+.user-details .input-box input:focus ~ label {
+    font-size: .6em;
+    top: 14px;
+    left: 15px;
+    color: #FF8802;
+}
+
+.user-details .input-box input:not(:placeholder-shown) ~ label {
+    font-size: .6em;
+    top: 8px;
+    left: 15px;
+    color: #FF8802;
+}
+
+.user-details .input-box label {
+    position: absolute;
+    font-size: 1em;
+    color: #FF8802;
+    top: 25%;
+    left: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+#salvarBtn, #editarBtn {
+    background-color: #FF8802;
+    width: 80%;
+    max-width: 450px;
+    height: 50px;
+    margin: 15px auto;
+    border-radius: 10px;
+    background: radial-gradient(circle, #ff8802 0%, #df7802 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 1.3em;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+}
+
+#salvarBtn:hover, #editarBtn:hover {
+    background: #ff9925;
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+/* Responsivo */
+
+@media screen and (max-width: 1024px) {
+    .header img {
+        width: 180px;
+        margin-left: -50px;
+    }
+
+    .user-details .input-box input {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .header img {
+        width: 150px;
+        margin-left: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-details {
+        padding: 10px;
+    }
+
+    .user-details .input-box {
+        width: 100%;
+    }
+
+    .user-details .input-box input {
+        width: 100%;
+        height: 40px;
+    }
+
+    #salvarBtn, #editarBtn {
+        width: 100%;
+        margin: 15px auto;
+    }
+
+    .back {
+        font-size: 25px;
+        margin: 15px 0;
+        margin-left: 10px;
+    }
+}

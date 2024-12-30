@@ -1,0 +1,526 @@
+@import "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap";
+
+* {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 45px;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Defina a animação */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+html {
+    background: linear-gradient(180deg, #141414, rgb(49, 49, 49));
+    background-size: cover;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #222121;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 
+        -5px 0 55px rgba(0, 0, 0, 0.5),
+        5px 0 55px rgba(0, 0, 0, 0.5),
+        0 -5px 55px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.header {
+    padding-top: 90px;
+}
+
+.header-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    margin-bottom: 50px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    backdrop-filter: blur(10px);
+}
+
+.header-logo img {
+    width: 210px;
+    margin-left: -63px;
+}
+
+.back {
+    color: #fff;
+    font-size: 3vw;
+    margin-left: 5%;
+    margin-bottom: -50px;
+}
+
+.back i:hover {
+    color: #FF8802;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .back {
+        font-size: 8vw;
+        margin-left: 10px;
+        margin-bottom: 0;
+    }
+}
+
+img {
+    width: 100%;
+    display: block;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.episodio-img {
+    object-fit: contain;
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    z-index: 1;
+}
+
+.container-tittle {
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5), 5px 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    color: #fff;
+    background-color: #222121;
+    width: 80%;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    flex-grow: 1;
+    padding: 25px 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpWithShadow 0.5s ease-out 0.3s forwards;
+}
+
+@keyframes slideUpWithShadow {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        box-shadow: none;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.series-title {
+    font-size: 45px;
+    margin: 15px 0 15px 35px;
+    width: 70%;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.5s ease-out 0.5s forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.series-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.series-age.age-12,
+.series-age.age-14,
+.series-age.age-16,
+.series-age.age-18,
+.series-age.age-livre {
+    color: white;
+    padding: 9px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.series-age.age-12 {
+    background-color: rgb(236, 236, 56);
+}
+
+.series-age.age-14 {
+    background-color: orange;
+}
+
+.series-age.age-16 {
+    background-color: red;
+}
+
+.series-age.age-18 {
+    background-color: black;
+}
+
+.series-age.age-livre {
+    background-color: green;
+    padding: 9px 19px;
+}
+
+.movie-meta {
+    padding: 28px;
+    margin-right: 35px;
+    color: yellow;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.series-description, .series-genres, .average-rating, .temporadas-container {
+    margin-left: 20px;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para a lista de estrelas */
+.average-rating ul {
+    list-style: none;  /* Remove as bolinhas (bullets) */
+    padding: 0;         /* Remove o padding padrão */
+    margin: 0;          /* Remove o margin padrão */
+    display: flex;      /* Exibe as estrelas de forma horizontal */
+    gap: 4px;           /* Espaço entre as estrelas */
+}
+
+/* Estilo para os itens de lista */
+.average-rating li {
+    font-size: 20px;    /* Ajuste o tamanho das estrelas conforme necessário */
+    margin: 0;          /* Remove qualquer margem extra */
+}
+
+/* Estilo para as estrelas cheias */
+.text-primary {
+    color: #ffcc00; /* Cor das estrelas cheias */
+}
+
+/* Estilo para as estrelas vazias */
+.text-secondary {
+    color: #6c757d; /* Cor das estrelas vazias */
+}
+
+/* Estilo para a meia estrela */
+.fa-star-half {
+    color: #ffcc00; /* Cor da meia estrela */
+}
+
+.temporadas-container h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: white;
+}
+
+#temporada-select {
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#episodios-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    font-weight: bold;
+    font-size: 18px;
+    padding-right: 10px;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    margin: 25px 55px 10px 0px;
+}
+
+h5 {
+    font-weight: normal; /* Remove o negrito */
+    font-family: inherit; /* Herda a fonte do elemento pai */
+    font-size: 20px;      /* Define o tamanho da fonte conforme necessário */
+    text-align: right;    /* Alinha o texto à direita */
+    margin-right: 150px;  /* Ajusta a margem direita */
+    margin-bottom: -30px; /* Ajusta a margem inferior */
+}
+
+
+.fav {
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 65px;
+}
+
+.fav i {
+    color: #3a3a3a; 
+}
+.fav i:hover {
+    transition: 1.0s ease;
+    color: #ff8002; 
+    transform: scale(1.1);
+}
+
+.favoritado:hover {
+    color: #ff8002;
+}
+
+/* Ícone favoritado */
+.fa-heart.favoritado {
+    color: #ff8002; /* Cor laranja quando está favoritado */
+}
+
+.avaliacao {
+    display: flex;
+}
+.star-icon{
+    font-size: 45px;
+    list-style-type: none;
+    cursor: pointer;
+    color: #ff8002;
+}
+
+.star-icon::before {
+    content: '\2605'; /*Isso daqui faz virar o negocio a estrela preenchida*/
+}
+
+.star-icon.ativo ~ .star-icon::before {
+    content: '\2606'; /*Isso também faz virar estrela, mas não preenchida*/
+}
+
+
+.avaliacao:hover .star-icon::before {
+    content: '\2605';
+}
+
+.star-icon:hover ~ .star-icon::before {
+    content: '\2606';
+}
+
+
+
+.episodio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.episodio-numero {
+    color: #ff8002;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 24px;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+}
+
+.episodio-img-container {
+    position: relative;
+    width: 130px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.episodio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.episodio-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: 2px solid #ff8002;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    color: #ff8002;
+    font-size: 20px;
+}
+
+.episodio-play-button:hover {
+    background-color: #ff8002;
+    color: white;
+}
+
+.episodio-desc-container{
+    flex: 1;
+}
+
+.episodio-titulo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.episodio-descricao {
+    font-size: 17px;
+    color: #555353;
+    margin: 0 0 12px 5px;
+    line-height: 1.4;
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.episodio-duracao {
+    font-size: 14px;
+    color: #888;
+    white-space: nowrap;
+    text-align: right;
+    font-weight: normal;
+}
+
+/* Responsividade */
+
+
+@media (max-width: 1200px) {
+    .image-container {
+        width: 85%;
+    }
+
+    .container-tittle {
+        width: 85%;
+    }
+
+    .series-title {
+        font-size: 40px;
+    }
+
+    .episodio-item {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        width: 90%;
+    }
+
+    .container-tittle {
+        width: 90%;
+    }
+
+    .series-title {
+        font-size: 30px;
+    }
+
+    .series-info {
+        font-size: 18px;
+    }
+
+    .episodio-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .episodio-img-container {
+        margin-bottom: 10px;
+    }
+
+    .episodio-titulo, .episodio-descricao, .episodio-duracao {
+        font-size: 14px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        width: 100%;
+    }
+
+    .container-tittle {
+        width: 100%;
+    }
+
+    .series-title {
+        font-size: 24px;
+    }
+
+    .episodio-img-container {
+        width: 80px;
+        height: 45px;
+    }
+
+    .episodio-titulo, .episodio-descricao, .episodio-duracao {
+        font-size: 12px;
+    }
+}

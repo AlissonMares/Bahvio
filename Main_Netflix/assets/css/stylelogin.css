@@ -1,0 +1,432 @@
+@import "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+html, body {
+    height: 100%; 
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    backdrop-filter: blur(10px);
+}
+
+img {
+    width: 210px;
+    margin-left: -63px;
+}
+
+.popup-text {
+    width: 800%; /* Largura em porcentagem, ajustando para caber em telas pequenas */
+    max-width: 500px; /* Define uma largura máxima */
+    word-wrap: break-word; /* Quebra palavras longas */
+    position: absolute; /* Mantém a posição relativa ao link/pai */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semitransparente */
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: normal; /* Permite quebra de linha */
+    z-index: 10;
+    top: 150%; /* Garante que sempre apareça abaixo do elemento pai */
+    left: 0; /* Mantém alinhado à esquerda do pai */
+    opacity: 0; /* Invisível inicialmente */
+    transform: translateY(10px); /* Levemente abaixo para a animação */
+    visibility: hidden; /* Esconde visualmente */
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s; /* Animação */
+}
+
+.popup-link:hover .popup-text {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Remove o deslocamento */
+    visibility: visible; /* Garante que seja visível */
+}
+
+/* Garante que o tamanho do popup se ajuste de acordo com o conteúdo */
+.popup-text p {
+    margin: 0; /* Remove margens indesejadas no conteúdo */
+    line-height: 1.5; /* Ajusta o espaçamento entre linhas */
+}
+
+
+.navlog {
+    position: relative; /* Necessário para o posicionamento do popup */
+}
+
+.popup-link {
+    position: relative;
+    display: inline-block;
+}
+
+.popup-link:hover .popup-text {
+    display: block;
+    opacity: 1;
+}
+
+.navlog {
+    margin-right: 150px;
+}
+
+.navlog a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navlog a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: #FF8802;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: 0.5s;
+}
+
+.navlog a:hover::after {
+    transform: scaleX(1);
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../images/teste4.png) no-repeat center center fixed; 
+    background-size: cover; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;      
+}
+
+.home .content {
+    max-width: 600px;
+    color: #fff;
+    text-align: center;  
+}
+
+.content h2 {
+    width: 80%;
+    margin-left: 50px;
+    font-size: 45px;
+    text-align: left;
+    letter-spacing: 0.03em;
+}
+
+.content p {
+    width: 70%;
+    margin-left: 50px;
+    font-size: 15px;
+    text-align: left;
+}
+
+
+.home .login {
+    position: relative;
+    width: 100%;  
+    max-width: 400px;  
+}
+
+.login {
+    padding-left: 50px;
+}
+
+.login h2 {
+    font-size: 3em;
+    color: #FF8802;
+    text-align: center; 
+    margin: 0;           
+}
+
+.login .input-box {
+    position: relative;
+    width: 120%;
+    height: 50px;
+    margin: 40px 0;
+}
+
+.input-box input {
+    width: 100%;  
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 25px 0 45px;
+}
+
+.input-box label {
+    position: absolute;
+    font-size: 1em;
+    color: #fff;
+    top: 30%;
+    left: 145px;
+    transform: translate(-50%);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label {
+    font-size: .6em;
+    top: 2px;
+    left: 100px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.login .remember {
+    font-size: .9em;
+    color: #fff;
+    font-weight: 500;
+    margin: -25px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Código achado para mudar a checkbox*/
+
+.remember input[type="checkbox"] {
+    /* Esconde o checkbox padrão */
+    -webkit-appearance: none; /* Para navegadores WebKit */
+    -moz-appearance: none; /* Para Firefox */
+    appearance: none; /* Para outros navegadores */
+    width: 20px; /* Largura do checkbox */
+    height: 20px; /* Altura do checkbox */
+    border: 2px solid #ccc; /* Borda do checkbox */
+    border-radius: 4px; /* Borda arredondada */
+    position: relative; /* Necessário para posicionar o checkmark */
+    cursor: pointer; /* Muda o cursor ao passar sobre o checkbox */
+    outline: none; /* Remove o contorno padrão */
+    transition: background 0.3s, border-color 0.3s; /* Transição suave */
+}
+
+.remember input[type="checkbox"]:checked {
+    background: #FF8802; /* Cor de fundo quando selecionado */
+    border-color: #FF8802; /* Cor da borda quando selecionado */
+}
+
+.remember input[type="checkbox"]:checked::after {
+    content: ''; /* Adiciona conteúdo vazio */
+    position: absolute; /* Para posicionar o "check" */
+    left: 4.8px; /* Ajusta a posição do "check" */
+    top: auto; /* Ajusta a posição do "check" */
+    width: 5px; /* Largura do "check" */
+    height: 10px; /* Altura do "check" */
+    border: solid white; /* Cor do "check" */
+    border-width: 0 2px 2px 0; /* Forma do "check" */
+    transform: rotate(45deg); /* Rotaciona para formar o "check" */
+    display: none; /* Inicialmente, não exibe o check */
+}
+
+.remember input[type="checkbox"]:checked::after {
+    display: block; /* Exibe o "check" quando o checkbox é selecionado */
+}
+
+.remember {
+    display: flex; /* Usar flexbox para alinhar os itens */
+    align-items: center; /* Alinha verticalmente os itens ao centro */
+}
+
+.remember label {
+    pointer-events: none;
+    display: flex; /* Flex para alinhar o checkbox e o texto */
+    align-items: center; /* Alinha verticalmente o texto com o checkbox */
+}
+
+.remember input[type="checkbox"] {
+    pointer-events: auto;
+    margin-right: 10px; /* Espaçamento entre o checkbox e o texto */
+}
+
+/*Fim do código da checkbox*/
+
+
+.remember a {
+    color: #FF8802;
+    text-decoration: none;
+    margin: -60px;
+    
+}
+
+.remember a:hover {
+    text-decoration: underline;
+}
+
+.login {
+    margin: 0 auto;  
+}
+
+
+.login .btn {
+    width: 50%;  
+    max-width: 450px;  
+    height: 50px;
+    margin: 0;
+    border: none; 
+    outline: none;
+    border-radius: 10px;
+    background: radial-gradient(circle, rgba(255, 140, 0, 1) 0%, rgba(255, 165, 0, 1) 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    position: relative; 
+    overflow: hidden; 
+    transition: transform 0.2s; /* Transição para o efeito de elevação */
+}
+
+.login .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; 
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 140, 0, 0.918); 
+    transform: scaleX(0); 
+    transform-origin: left; 
+    transition: transform 0.3s ease; 
+    z-index: 0; 
+}
+
+.login .btn:hover {
+    transform: translateY(-2px); /* Efeito de leve elevação */
+}
+
+.login .btn:hover::before {
+    transform: scaleX(1); 
+}
+
+.login .btn span {
+    position: relative; 
+    z-index: 1; 
+}
+
+
+.register {
+    margin-top: 20px;
+    color: #ffffff; 
+    font-size: 0.9em;
+}
+
+.register a {
+    color: #FF8802;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;/
+}
+
+.error-message {
+    position: fixed;
+    padding-left: 25px;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    background-color:transparent;
+
+}
+
+/* Media Queries para Responsividade
+                Anotações */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 40px;  /* Reduz o padding no cabeçalho */
+    }
+
+    .navlog a {
+        margin-left: 20px;  /* Diminui o espaçamento entre os links */
+    }
+
+    .content h2 {
+        font-size: 2.5em;  /* Diminui o tamanho da fonte em telas menores */
+    }
+
+    .home .login {
+        max-width: 90%;  /* Permite que o login ocupe mais espaço em telas pequenas */
+    }
+
+    .login h2 {
+        font-size: 1.5em;  /* Diminui o tamanho do título do login */
+    }
+
+    .input-box input {
+        font-size: 0.9em;  /* Diminui o tamanho da fonte dos inputs */
+    }
+
+    .login .btn {
+        font-size: 1em;  /* Diminui o tamanho da fonte do botão */
+    }
+
+    .register p a {
+        font-size: 0.8em;  /* Diminui o tamanho da fonte do link de registro */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 20px 20px;  /* Diminui ainda mais o padding no cabeçalho */
+    }
+
+    .navlog a {
+        margin-left: 10px;  /* Diminui o espaçamento entre os links */
+        font-size: 0.9em;  /* Diminui o tamanho da fonte dos links */
+    }
+
+    .content h2 {
+        font-size: 2em;  /* Diminui ainda mais o tamanho da fonte */
+    }
+
+    .home .login {
+        max-width: 95%;  /* Ajusta a largura do formulário de login */
+    }
+
+    .input-box label {
+        left: 120px;  /* Ajusta a posição do label para telas menores */
+    }
+
+    .register p a {
+        font-size: 0.7em;  /* Diminui o tamanho da fonte do link de registro */
+    }
+}
+
+#togglePassword {
+    position: absolute; /* posiciona o ícone de olho */
+    right: 15px; /* distância do lado direito */
+    top: 14px; /* ajuste a posição vertical conforme necessário */
+    font-size: 1.2em;
+    color: #fff; /* deixá-lo branco */
+    cursor: pointer; /* para indicar que é clicável */
+    z-index: 1; /* garantir que o ícone fique acima do input */
+}
+

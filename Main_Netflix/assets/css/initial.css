@@ -1,0 +1,249 @@
+@import "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap";
+/*Responsivo*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-family: "Rubik", sans-serif;
+  background: black;
+  color: #fff;
+  line-height: 1.7;
+  overflow-x: hidden; }
+
+body {
+  font-family: "Rubik", sans-serif;
+  background: black;
+  background: linear-gradient(0deg, black 35%, #3526bd 100%);
+  color: #fff;
+  line-height: 1.7;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #fff;
+  text-decoration: none; }
+  a:hover {
+    color: #ccc; }
+
+ul {
+  list-style-type: none; }
+
+img {
+  width: 100%; }
+
+h4 {
+  color: #ffa500;
+  font-size: 14px;
+  text-transform: uppercase;
+  z-index: 5; }
+
+.btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #333;
+  min-width: 135px;
+  padding: 20px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 14px;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  z-index: 5; }
+
+.btn-cta:hover {
+  opacity: 0.8; }
+
+.legal-text {
+  font-size: 10px;
+  color: #ccc;
+  margin-top: 20px;
+  z-index: 5; }
+
+.header {
+  min-height: 530px;
+  background: url(../images/backgoundcatalogo.jpg) no-repeat center center/cover;
+  object-fit: cover;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px; }
+  .header .header-container {
+    position: relative;
+    z-index: 2; }
+    .header .header-container nav {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 40px; }
+      .header .header-container nav .login-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        cursor: pointer; }
+        .header .header-container nav .login-btn:hover {
+          background-color: rgba(255, 255, 255, 0.3);
+          border-color: rgba(255, 255, 255, 0.9);
+          color: #000; }
+    .header .header-container .header-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 30px; }
+  .header .header-black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); }
+  .header .logo {
+    width: 270px;
+    margin: 20px 0;
+    z-index: 2; }
+  .header .header-text-1 {
+    font-size: 50px;
+    font-weight: bold;
+    z-index: 2;
+    line-height: 1.2em;
+    text-align: center; }
+  .header .header-text-2 {
+    font-size: 18px;
+    margin: 25px 0;
+    z-index: 2;
+    line-height: 1em; }
+
+.divider {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  margin: 0; }
+  .divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 3.5%;
+    background: linear-gradient(to top, transparent 50%, #fd5f03 50%);
+    border-radius: 0 0 120% 120%;
+    transform: scaleY(0.9); }
+
+.banner {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: #13275e;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 75%;
+  transition: transform 0.3s ease, background-color 0.3s ease; }
+  .banner:hover {
+    transform: scale(1.05);
+    background-color: #2a3a8b; }
+  .banner h2 {
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+    padding-right: 20px; }
+  .banner p {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin: 5px 0 0; }
+
+.banner-icon {
+  width: 60px;
+  margin-right: 15px;
+  transition: transform 0.3s ease; }
+
+.banner-content {
+  flex-grow: 1; }
+
+.btn-banner {
+  background-color: #482bee;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease; }
+  .btn-banner:hover {
+    transform: scale(1.1);
+    background-color: #797ae4; }
+
+.bahvio {
+  margin: 35px; }
+
+.div-box {
+  background: black;
+  background: linear-gradient(90deg, black 3%, #df6008 25%, rgba(255, 135, 1, 0.9682247899) 57%);
+  border-radius: 5px;
+  margin: 15px;
+  margin-left: 35px;
+  padding: 10px;
+  width: 80%; }
+
+.div-box2 {
+  background: black;
+  background: linear-gradient(90deg, black 3%, #df6008 25%, rgba(255, 135, 1, 0.9682247899) 57%);
+  border-radius: 5px;
+  margin: 15px;
+  margin-left: 35px;
+  padding: 10px;
+  width: 80%; }
+
+.div-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 50px; }
+  .div-message p {
+    width: 70%; }
+
+.plan-container {
+  margin-bottom: 50px; }
+  .plan-container h1 {
+    padding-top: 22px;
+    display: flex;
+    justify-content: center; }
+  .plan-container p {
+    display: flex;
+    justify-content: center; }
+  .plan-container .plan-content .plans-itens-ct {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .plan-container .plan-content .plans-itens-ct .plan-item {
+      padding: 10px;
+      border-bottom: 1px solid #CCC;
+      padding-left: 50px; }
+
+.logo {
+  width: 220px;
+  margin: 18px 0; }
+
+@media (max-width: 768px) {
+  .header .ldivgo {
+    width: 200px; }
+  .header .header-content {
+    text-align: center;
+    padding: 0 20px; } }
+
+/*# sourceMappingURL=initial.css.map */

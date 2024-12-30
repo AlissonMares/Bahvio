@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #141414, rgb(49, 49, 49));
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    padding-top: 120px;
+}
+
+.container-filtrer {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Estilos para o select */
+#select {
+    padding: 10px; 
+    margin: 10px;
+    font-size: 16px; 
+    color: #ffffff; 
+    background-color: transparent;
+    border: 2px solid #FF8802; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none;
+}
+
+/* Ícone de seta no select */
+#select {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF8802"%3E%3Cpath d="M7 10l5 5 5-5z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+#select:focus {
+    border-color: #FF8802;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#select option {
+    background-color: #141414;
+    border: none;
+    color: #fff;
+}
+
+.sidebar {
+    margin-bottom: 10px;
+    height: 800px;
+    background: linear-gradient(180deg, #141414, rgb(49, 49, 49));
+    padding: 40px;
+    width: 250px;
+    border-right: 1px solid #141414;
+    box-shadow: 
+    -5px 0 12px rgba(0, 0, 0, 0.5),
+    0 -5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h2 {
+    color: #fff;
+    margin-bottom: 27px;
+    margin-top: 0;
+}
+
+#filterForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#generosContainer label {
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#generosContainer input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#generosContainer input[type="checkbox"]:checked {
+    background-color: #ff8802;
+    border-color: #ff8802;
+    position: relative;
+}
+
+#generosContainer input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+#filtrarBtn {
+    background-color: #FF8802;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#filtrarBtn:hover {
+    background-color: #f89f39;
+}
+
+/* Alinhar botões consistentemente */
+.movies-list h2 {
+    width: 100%;
+    padding-bottom: 20px;
+    color: #fff;
+    margin-left: 15px;
+}
+
+.movies-list {
+    justify-content: flex-start;
+    display: flex; 
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left: 15px;
+}
+
+
+.movie-item-list {
+    flex: 1 1 calc(33% - 30px) !important; 
+    max-width: 350px !important; 
+    padding: 20px; 
+    text-align: center;
+    background: #1e1e1e; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    min-height: 450px !important; 
+    position: relative;
+}
+
+.movie-item-list:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); 
+    border: 1px solid rgba(255, 136, 2, 0.8); 
+}
+
+.movie-image {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px; 
+    margin-bottom: 10px; 
+}
+
+.movie-item-list h3 {
+    min-height: 50px; 
+    font-size: 18px; 
+    color: #fff; 
+    margin: 10px 0;
+    letter-spacing: 0.5px; 
+}
+
+
+.assistir-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: #ff8802;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    width: 80%; 
+}
+
+.assistir-btn:hover {
+    background-color: #f89f39;
+    transform: translateX(-50%) scale(1.1); 
+}
+
+
+@media screen and (min-width: 1400px) {
+    .container-filtrer {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .movie-item-list {
+        flex: 1 1 calc(20% - 15px); /* Ajustado para telas maiores */
+    }
+
+    .sidebar {
+        width: 300px;
+    }
+}

@@ -1,0 +1,227 @@
+
+body{
+    font-family: "Rubik", sans-serif;
+    background: linear-gradient(180deg, #141414, rgb(49, 49, 49));
+    color: #fff;
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    margin-bottom: 50px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    backdrop-filter: blur(10px)
+}
+
+.header-logo img {
+    width: 210px;
+    margin-left: -63px
+}
+
+.header-title {
+    display: flex;
+    justify-content: space-between; /* Isso vai colocar a logo e o botão "Voltar" nas extremidades */
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    width: 100%; /* Garante que a largura ocupe toda a tela */
+    padding-top: 76px; /* Ajuste do espaçamento superior para o conteúdo abaixo do header */
+}
+
+/* Estilo do back button */
+.back {
+    display: flex;
+    font-size: 3vw;
+    padding-left: 70px;
+}
+
+/* Estilo do ícone de voltar */
+.back i {
+    color: #fff; /* Cor padrão */
+    transition: 0.3s ease;
+}
+
+/* Hover do back button */
+.back i:hover {
+    color: #FF8802;
+    cursor: pointer;
+}
+
+form {
+    width: 100%;
+    max-width: 900px;
+    background-color: #1e1e1e; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+label {
+    font-size: 16px;
+    display: block;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Foco nos inputs */
+input[type="text"]:focus,
+select:focus {
+    border-color: #FF8802;
+    outline: none;
+}
+
+/* Botões */
+button {
+    padding: 12px 20px;
+    background-color: #FF8802;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #e57e02;
+}
+
+#episodios-container {
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#episodios-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.episodio-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px;
+    background: #2a2a2a;
+    border-radius: 6px;
+}
+
+.episodio-numero {
+    background-color: #FF8802;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.episodio-desc-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#descricao {
+    font-family: "Rubik", sans-serif;
+    margin: 5px 0;
+    min-height: auto;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.episodio-titulo,
+.episodio-descricao,
+.episodio-duracao {
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+}
+
+#duracao {
+    width: 15%;
+}
+
+#ano {
+    width:8%;
+}
+
+#idade {
+    width: 6%;
+}
+
+#temporada{
+    width: 20%;
+}
+
+/* Botões de salvar e excluir */
+.salvar-btn,
+.excluir-btn {
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.salvar-btn:hover {
+    background-color: #218838;
+}
+
+.excluir-btn {
+    background-color: #dc3545;
+}
+
+.excluir-btn:hover {
+    background-color: #c82333;
+}
+
+.episodio-item button {
+    margin-left: 10px;
+}
+
+/* Título dos episódios */
+#episodios-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #FF8802;
+}

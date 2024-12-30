@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #141414, rgb(49, 49, 49));
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    margin-bottom: 50px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    backdrop-filter: blur(10px)
+}
+
+.header-logo img {
+    width: 210px;
+    margin-left: -63px
+}
+.header {
+    width: 1200px; /* Igual à largura da tabela */
+    margin: 0 auto; /* Centraliza o cabeçalho */
+    padding-top: 90px; 
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 94%;
+    padding: 0 20px; /* Garantir o mesmo espaçamento lateral da tabela */
+    margin-bottom: 15px;
+}
+
+.back {
+    display: flex;
+    font-size: 3vw;
+    padding-left: 35px;
+}
+
+.back i:hover {
+    color: #FF8802;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+
+.btn-cad {
+    font-weight: bold;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn-cad:hover {
+    background-color: #54a6ff;
+}
+
+/* Responsividade para telas pequenas */
+@media screen and (max-width: 1200px) {
+    .header {
+        width: 100%; /* Cabeçalho ocupa toda a largura disponível */
+        padding-top: 50px; /* Ajusta o espaço superior em telas menores */
+    }
+
+    .header-title {
+        padding: 0 10px; /* Menos padding para telas pequenas */
+        margin-bottom: 20px; /* Menos margem entre título e botão */
+    }
+
+    h1 {
+        font-size: 24px; /* Reduz o tamanho da fonte em telas pequenas */
+    }
+
+    .btn-cad {
+        font-size: 14px; /* Reduz o tamanho da fonte do botão */
+        padding: 8px 16px; /* Menos padding no botão */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-title {
+        flex-direction: column; /* Empilha os itens em telas menores */
+        align-items: center; /* Centraliza os itens no eixo principal */
+        text-align: center;
+    }
+
+    h1 {
+        margin: 10px 0;
+        font-size: 22px; /* Diminui ainda mais o tamanho da fonte */
+    }
+
+    .btn-cad {
+        margin-top: 10px;
+        padding: 8px 16px; /* Ajuste no padding para botões menores */
+        font-size: 14px; /* Ajuste no tamanho da fonte do botão */
+    }
+}
+
+
+h1 {
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    margin: 0;
+    flex-grow: 1; /* Permite que o título ocupe o espaço restante */
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+table {
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    color: #ccc;
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 18px;
+    
+}
+
+tr:hover {
+    background-color: rgba(255, 136, 2, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+button {
+    background-color: #FF8802;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 5px;
+}
+
+button:hover {
+    background-color: #f89f39;
+    transform: scale(1.05);
+}
+
+.btn-edit {
+    background-color: #4CAF50; /* Verde */
+    padding: 8px 18px; 
+}
+
+.btn-edit:hover {
+    background-color: #45a049; /* Verde mais escuro */
+}
+
+.btn-delete {
+    background-color: #e92012;
+    padding: 8px 15px; 
+}
+
+.btn-delete:hover {
+    background-color: #D32F2F; /* Vermelho mais escuro */
+}
+
+
+form {
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+}
